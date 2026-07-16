@@ -33,7 +33,6 @@
             overflow: hidden;
         }
 
-        /* --- Header: Shivay Brand Logo & Shlok --- */
         .top-header {
             background-color: #ffffff;
             color: var(--tcs-blue);
@@ -88,29 +87,6 @@
             letter-spacing: 1px;
         }
 
-        .shlok-container {
-            text-align: center;
-            font-style: italic;
-            color: #d35400;
-            font-weight: bold;
-            font-size: 13px;
-            background: #fff3e0;
-            padding: 4px 12px;
-            border-radius: 20px;
-            border: 1px dashed var(--tcs-orange);
-            max-width: 45%;
-        }
-
-        .exam-title-badge {
-            font-size: 13px;
-            font-weight: bold;
-            color: white;
-            background-color: var(--tcs-blue);
-            padding: 6px 12px;
-            border-radius: 4px;
-        }
-
-        /* --- Screens & Overlays --- */
         .full-screen-container {
             position: fixed;
             top: 0;
@@ -149,14 +125,6 @@
             text-align: left;
         }
 
-        .instruction-box h2 {
-            color: var(--tcs-blue);
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-
-        /* --- Common UI elements --- */
         .input-group {
             margin-bottom: 18px;
             text-align: left;
@@ -195,39 +163,14 @@
             background-color: var(--tcs-light-blue);
         }
 
-        /* --- Instruction Legend Cards --- */
-        .inst-legend {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 12px;
-            font-size: 14px;
-        }
-
-        .inst-color-box {
-            width: 30px;
-            height: 30px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-            font-size: 12px;
-            flex-shrink: 0;
-            border: 1px solid #ccc;
-        }
-
-        /* --- Main Exam Layout Split --- */
         .main-container {
             display: flex;
             flex: 1;
             overflow: hidden;
         }
 
-        /* Left 70% Questionnaire Area */
         .question-panel {
-            width: 70%;
+            width: 75%;
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -243,14 +186,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .lang-selector-top select {
-            padding: 4px 8px;
-            font-size: 12px;
-            font-weight: bold;
-            border: 1px solid var(--border-color);
-            border-radius: 3px;
         }
 
         .question-area {
@@ -274,15 +209,6 @@
             margin-bottom: 20px;
             border-bottom: 1px dashed #e0e0e0;
             padding-bottom: 15px;
-        }
-
-        .lang-text {
-            margin-bottom: 12px;
-        }
-
-        .lang-text.hindi {
-            color: #1a5276;
-            font-weight: 500;
         }
 
         .option-label {
@@ -310,9 +236,8 @@
             accent-color: var(--tcs-blue);
         }
 
-        /* Right 30% Sidebar Panel */
         .sidebar-panel {
-            width: 30%;
+            width: 25%;
             background-color: #f4f5f7;
             display: flex;
             flex-direction: column;
@@ -338,21 +263,6 @@
             justify-content: center;
         }
 
-        .photo-box svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .candidate-info {
-            font-size: 12px;
-            line-height: 1.5;
-        }
-
-        .candidate-info strong {
-            color: var(--tcs-blue);
-            font-size: 14px;
-        }
-
         .timer-container {
             background-color: #ffebee;
             color: var(--red-unanswered);
@@ -363,27 +273,16 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* Grid Palette Scroll */
         .palette-container {
             flex: 1;
             padding: 15px;
             overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .palette-title {
-            font-size: 12px;
-            font-weight: bold;
-            color: #555;
-            margin-bottom: 10px;
-            text-transform: uppercase;
         }
 
         .grid-matrix {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 6px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
             margin-bottom: 15px;
         }
 
@@ -392,4 +291,366 @@
             border: 1px solid var(--border-color);
             background-color: var(--gray-unvisited);
             color: #333;
-            font-size: 11
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .grid-item.active {
+            outline: 3px solid var(--tcs-light-blue);
+        }
+
+        .status-saved { background-color: var(--green-saved) !important; color: white !important; }
+        .status-unanswered { background-color: var(--red-unanswered) !important; color: white !important; }
+        .status-review { background-color: var(--purple-review) !important; color: white !important; }
+        .status-unvisited { background-color: var(--gray-unvisited) !important; color: #333 !important; }
+
+        .footer-bar {
+            background-color: #f4f7f9;
+            border-top: 1px solid var(--border-color);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .footer-btn {
+            padding: 10px 22px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-clear { background-color: #ffffff; color: #555; }
+        .btn-review { background-color: #f0f4f8; color: var(--purple-review); border-color: var(--purple-review); }
+        .btn-save-next { background-color: var(--green-saved); color: white; border-color: var(--green-saved); }
+        .btn-submit-exam { background-color: var(--tcs-blue); color: white; border-color: var(--tcs-blue); }
+
+        .result-panel {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            overflow-y: auto;
+            text-align: center;
+        }
+
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <!-- Registration Screen -->
+    <div id="registration-portal" class="full-screen-container">
+        <div class="portal-box">
+            <h2>SHIVAY MOCK SERVICES</h2>
+            <p>HP Government Online Recruitment Exam Portal</p>
+            
+            <form id="portalForm" onsubmit="return handleRegister(event)">
+                <div class="input-group">
+                    <label>Candidate Name *</label>
+                    <input type="text" id="student-name" required placeholder="Enter name">
+                </div>
+                <div class="input-group">
+                    <label>Select Mock Test *</label>
+                    <select id="test-select" required>
+                        <option value="mock1">HPRCA JOA IT Mock Test 1</option>
+                        <option value="mock2">HPRCA JOA IT Mock Test 2</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-action" style="width: 100%;">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Instruction Screen -->
+    <div id="instruction-portal" class="full-screen-container hidden">
+        <div class="instruction-box">
+            <h2>General Instructions / सामान्य निर्देश</h2>
+            <p>कृपया निर्देशों को ध्यान से पढ़ें। सभी प्रश्न द्विभाषी (Bilingual) हैं।</p>
+            <button class="btn-action" onclick="startActualExam()">I am ready to begin</button>
+        </div>
+    </div>
+
+    <!-- Top Header Bar -->
+    <header class="top-header">
+        <div class="logo-container">
+            <div class="shivay-logo">S</div>
+            <div class="brand-text">
+                <span class="brand-title">SHIVAY MOCK SERVICES</span>
+                <span class="brand-subtitle">TCS CBT Interface</span>
+            </div>
+        </div>
+        <div class="exam-title-badge" id="exam-attempt-title">Exam Portal</div>
+    </header>
+
+    <!-- Main Exam UI Layout -->
+    <main class="main-container hidden" id="exam-dashboard">
+        <section class="question-panel">
+            <div class="q-header-bar">
+                <span>SECTION: Core Question Paper</span>
+            </div>
+            
+            <div class="question-area" id="question-render">
+                <!-- Question content renders dynamically -->
+            </div>
+        </section>
+
+        <aside class="sidebar-panel">
+            <div class="timer-container" id="time-left">⏳ Time Left: 60:00</div>
+            <div class="candidate-card">
+                <div class="photo-box">PHOTO</div>
+                <div class="candidate-info">
+                    <strong id="display-candidate-name">Candidate Name</strong><br>
+                    Roll No: SHIVAY-2026
+                </div>
+            </div>
+
+            <div class="palette-container">
+                <div style="font-size: 12px; font-weight: bold; margin-bottom: 8px;">QUESTION PALETTE</div>
+                <div class="grid-matrix" id="question-grid"></div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Action Footer (Buttons layout exactly matches standard CBT) -->
+    <footer class="footer-bar hidden" id="exam-footer">
+        <div style="display: flex; gap: 10px;">
+            <button class="footer-btn btn-clear" onclick="clearAnswer()">Clear Response</button>
+            <button class="footer-btn btn-review" onclick="markForReview()">Mark for Review & Next</button>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <button class="footer-btn btn-save-next" onclick="saveAndNext()">Save & Next</button>
+            <button class="footer-btn btn-submit-exam" onclick="triggerFinalSubmit()">Submit Test</button>
+        </div>
+    </footer>
+
+    <!-- Scorecard Dashboard Screen -->
+    <section id="result-panel" class="result-panel hidden">
+        <h2>CBT Exam Submission Report</h2>
+        <div id="dashboard-score-text" style="font-size: 20px; font-weight: bold; margin: 20px 0;"></div>
+        <button class="btn-action" onclick="location.reload()">Re-attempt Exam</button>
+    </section>
+
+    <script>
+        const testsDatabase = {
+            "mock1": {
+                title: "HPRCA JOA IT Mock Test 1",
+                questions: [
+                    { qE: "A __________ is an electronic device that processes data and converts it into information.", qH: "एक __________ एक इलेक्ट्रॉनिक उपकरण है जो डेटा को प्रोसेस करता है और इसे सूचना में परिवर्तित करता है।", options: ["Computer", "Processor", "Case", "Stylus"], correct: 0 },
+                    { qE: "__________ is processed into information by computer processor?", qH: "कंप्यूटर प्रोसेसर द्वारा किसे सूचना में संसाधित (process) किया जाता है?", options: ["Number", "Processor", "Input", "Data"], correct: 3 },
+                    { qE: "First supercomputer developed in India is:", qH: "भारत में विकसित पहला सुपरकंप्यूटर कौन सा है?", options: ["PARAM 8000", "Aryabhatt", "Buddha", "Cray-1"], correct: 0 },
+                    { qE: "Which of the following is considered volatile memory in a computer system?", qH: "कंप्यूटर सिस्टम में निम्नलिखित में से किसे वोलेटाइल मेमोरी माना जाता है?", options: ["ROM", "Hard Disk", "RAM", "Flash Drive"], correct: 2 }
+                ]
+            },
+            "mock2": {
+                title: "HPRCA JOA IT Mock Test 2",
+                questions: [
+                    { qE: "According to Rig Veda, Shambara was a powerful king of which tribe?", qH: "ऋग्वेद के अनुसार, शंबर किस जनजाति का एक शक्तिशाली राजा था?", options: ["Khash", "Kiratas", "Khampa", "Audumbaras"], correct: 1 },
+                    { qE: "Against which Aryan King did Shambara fight a 40-year-long war?", qH: "शंबर ने किस आर्य राजा के खिलाफ 40 साल तक युद्ध लड़ा था?", options: ["Sudas", "Divodas", "Varchi", "Bhardwaj"], correct: 1 }
+                ]
+            }
+        };
+
+        let quizQuestions = [];
+        let currentIdx = 0;
+        let selectedOption = null;
+        let candidateName = "";
+        let selectedTestKey = "mock1";
+        
+        let timerMin = 60;
+        let timerSec = 0;
+        let timerInterval;
+
+        let studentAnswers = [];
+        let questionStatuses = [];
+
+        function handleRegister(event) {
+            event.preventDefault();
+            candidateName = document.getElementById('student-name').value.trim();
+            selectedTestKey = document.getElementById('test-select').value;
+
+            quizQuestions = testsDatabase[selectedTestKey].questions;
+            studentAnswers = new Array(quizQuestions.length).fill(null);
+            questionStatuses = new Array(quizQuestions.length).fill('unvisited');
+
+            document.getElementById('registration-portal').classList.add('hidden');
+            document.getElementById('instruction-portal').classList.remove('hidden');
+            return false;
+        }
+
+        function startActualExam() {
+            document.getElementById('instruction-portal').classList.add('hidden');
+            document.getElementById('exam-dashboard').classList.remove('hidden');
+            document.getElementById('exam-footer').classList.remove('hidden');
+            
+            document.getElementById('display-candidate-name').innerText = candidateName;
+            document.getElementById('exam-attempt-title').innerText = testsDatabase[selectedTestKey].title;
+
+            buildGridPalette();
+            loadQuestion();
+            startCountdownTimer();
+        }
+
+        function buildGridPalette() {
+            const grid = document.getElementById("question-grid");
+            grid.innerHTML = "";
+            for (let i = 0; i < quizQuestions.length; i++) {
+                const item = document.createElement("div");
+                item.className = "grid-item status-unvisited";
+                item.innerText = i + 1;
+                item.id = "grid-q-" + i;
+                item.addEventListener("click", () => jumpToQuestion(i));
+                grid.appendChild(item);
+            }
+            updateGridVisuals();
+        }
+
+        function jumpToQuestion(idx) {
+            if(studentAnswers[currentIdx] === null && questionStatuses[currentIdx] !== 'review') {
+                questionStatuses[currentIdx] = 'unanswered';
+            }
+            currentIdx = idx;
+            loadQuestion();
+            updateGridVisuals();
+        }
+
+        function loadQuestion() {
+            selectedOption = studentAnswers[currentIdx];
+            const q = quizQuestions[currentIdx];
+            const container = document.getElementById('question-render');
+            
+            let html = `
+                <div class="q-text-section">
+                    <div style="margin-bottom: 10px;">
+                        <span class="q-num-badge">Question ${currentIdx + 1}</span>
+                        <strong>${q.qE}</strong>
+                    </div>
+                    <div style="color: #1a5276;">
+                        <span class="q-num-badge" style="background-color: #1a5276;">प्रश्न ${currentIdx + 1}</span>
+                        <strong>${q.qH}</strong>
+                    </div>
+                </div>
+                <div class="options-group">
+            `;
+
+            q.options.forEach((opt, index) => {
+                let isChecked = (selectedOption === index) ? "checked" : "";
+                html += `
+                    <label class="option-label" onclick="selectOpt(${index})">
+                        <input type="radio" name="q-ans" id="opt-${index}" value="${index}" ${isChecked}>
+                        <span>${opt}</span>
+                    </label>
+                `;
+            });
+
+            html += `</div>`;
+            container.innerHTML = html;
+
+            if(questionStatuses[currentIdx] === 'unvisited') {
+                questionStatuses[currentIdx] = 'unanswered';
+            }
+
+            document.querySelectorAll('.grid-item').forEach(el => el.classList.remove('active'));
+            const activeGridItem = document.getElementById("grid-q-" + currentIdx);
+            if(activeGridItem) activeGridItem.classList.add('active');
+        }
+
+        function selectOpt(index) {
+            selectedOption = index;
+            studentAnswers[currentIdx] = index;
+            const rad = document.getElementById(`opt-${index}`);
+            if(rad) rad.checked = true;
+        }
+
+        function clearAnswer() {
+            selectedOption = null;
+            studentAnswers[currentIdx] = null;
+            document.querySelectorAll('input[name="q-ans"]').forEach(el => el.checked = false);
+            questionStatuses[currentIdx] = 'unanswered';
+            updateGridVisuals();
+        }
+
+        function markForReview() {
+            questionStatuses[currentIdx] = 'review';
+            updateGridVisuals();
+            proceedNext();
+        }
+
+        function saveAndNext() {
+            if(studentAnswers[currentIdx] !== null) {
+                questionStatuses[currentIdx] = 'saved';
+            } else {
+                questionStatuses[currentIdx] = 'unanswered';
+            }
+            updateGridVisuals();
+            proceedNext();
+        }
+
+        function proceedNext() {
+            if(currentIdx < quizQuestions.length - 1) {
+                currentIdx++;
+                loadQuestion();
+            } else {
+                alert("You are on the last question. Click 'Submit Test' to finish.");
+            }
+        }
+
+        function updateGridVisuals() {
+            for (let i = 0; i < quizQuestions.length; i++) {
+                const item = document.getElementById("grid-q-" + i);
+                if(item) {
+                    item.className = "grid-item";
+                    item.classList.add("status-" + questionStatuses[i]);
+                }
+            }
+            const activeGridItem = document.getElementById("grid-q-" + currentIdx);
+            if(activeGridItem) activeGridItem.classList.add('active');
+        }
+
+        function startCountdownTimer() {
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                if(timerSec === 0) {
+                    if(timerMin === 0) {
+                        clearInterval(timerInterval);
+                        triggerFinalSubmit();
+                        return;
+                    }
+                    timerMin--;
+                    timerSec = 59;
+                } else {
+                    timerSec--;
+                }
+                document.getElementById('time-left').innerText = `⏳ Time Left: ${timerMin}:${timerSec < 10 ? '0' : ''}${timerSec}`;
+            }, 1000);
+        }
+
+        function triggerFinalSubmit() {
+            let conf = confirm("क्या आप सच में टेस्ट सबमिट करना चाहते हैं?");
+            if(!conf) return;
+
+            clearInterval(timerInterval);
+            document.getElementById('exam-dashboard').classList.add('hidden');
+            document.getElementById('exam-footer').classList.add('hidden');
+            document.getElementById('result-panel').classList.remove('hidden');
+
+            let correctCount = 0;
+            studentAnswers.forEach((ans, index) => {
+                if(ans === quizQuestions[index].correct) {
+                    correctCount++;
+                }
+            });
+
+            document.getElementById('dashboard-score-text').innerText = 
+                `${candidateName}, आपका स्कोर है: ${correctCount} / ${quizQuestions.length}`;
+        }
+    </script>
+</body>
+</html>
